@@ -13,8 +13,8 @@
     box-sizing: border-box;
 }
 body{
-    background-color: var(--color-1);
-    color:var(--text)
+    background-color: var(--color-1)!important;
+    color:var(--text)!important
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

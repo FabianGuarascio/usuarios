@@ -1,1 +1,22 @@
-<p>listado-contactos works!</p>
+<div class="container">
+    <div class="contacto" *ngFor="let contacto of contactos">
+        <div class="nombreYapellido row">
+            <span class="col-6">Nombre y apellido: </span>
+            <span class="col-6">{{contacto.nombre}} {{contacto.apellido}}</span>
+        </div>
+        <div class="telefonoYemail row ">
+            <span class="col-6">Telefono:</span>
+            <span class="col-6">{{contacto.telefono}}</span>
+            <span class="col-6">Email:  </span>
+            <span class="col-6">{{contacto.email}}</span>
+        </div>
+        <div class="direccion row">
+            <span class="col-6">Pais:</span>
+            <span class="col-6">{{contacto.pais}}</span>
+            <span class="col-6">Ciudad:</span>
+            <span class="col-6">{{contacto.ciudad}}</span>
+            <span class="col-6">Calle:</span>
+            <span class="col-6">{{contacto.calle}}</span>
+        </div>
+    </div>
+</div>
