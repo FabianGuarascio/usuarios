@@ -1,0 +1,41 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.card{
+    width: 40%;
+    height: 40%;
+    background-color: var(--color-3);
+    display: flex;
+    border-radius: 2rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:2rem;
+}
+::ng-deep  .mat-form-field-label {
+    /*change color of label*/
+    color: rgb(6, 217, 6) !important;
+    margin-left: 0.5rem;
+    font-weight: 800;
+   }
+  
+   ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: green !important;
+  } 
+  
+  ::ng-deep.mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color: green !important;;
+  }
+
+::ng-deep.mat-form-field-flex{
+    /* change color of background of input field */
+    background-color: var(--color-4);
+    border-top-right-radius:1rem ;
+    border-top-left-radius:0.5rem ;
+}
