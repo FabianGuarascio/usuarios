@@ -31,7 +31,6 @@ export class PagesComponent implements OnInit {
         this.loginService.loginUsuario(datos).subscribe(usuario=>localStorage['usuario'] = usuario)
         alertify.success("Inicio de sesion exitoso")
         this.router.navigate(['dashboard']);
-
       }else{
         alertify.error("Usuario y/o contraseña incorrectos")
       }
@@ -45,15 +44,4 @@ export class PagesComponent implements OnInit {
     alertify.success("prueba exitosa")
     
   }
-
-  
-
-    // if (respuesta != 'FAIL') {
-    //   await this.inicioExitoso(respuesta, datos, () => {
-    //     this.router.navigate(['/posteos']);
-    //   })
-    // } else {
-    //   alertify.alert("Las credenciales son incorrectas.", " Por favor intente nuevamente.");
-    // }
-  
 }
