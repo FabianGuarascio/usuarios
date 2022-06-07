@@ -1,7 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
 
-
+declare let alertify:any;
 
 @Component({
   selector: 'app-pages',
@@ -14,7 +15,7 @@ export class PagesComponent implements OnInit {
   @ViewChild("password")
   password!: ElementRef;
 
-  constructor(public loginService: LoginService) { }
+  constructor(public loginService: LoginService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -27,15 +28,22 @@ export class PagesComponent implements OnInit {
     this.loginService.login(datos).subscribe(data=>{
       if(data!="FAIL"){
         localStorage['token'] = data;
-        console.log("te re iniciaste amiguete")
+        this.loginService.loginUsuario(datos).subscribe(usuario=>localStorage['usuario'] = usuario)
+        alertify.success("Inicio de sesion exitoso")
+        this.router.navigate(['dashboard']);
+
       }else{
-        console.log("che como que no estas autorizado a entrar")
+        alertify.error("Usuario y/o contraseña incorrectos")
       }
-    } 
-      ,error=> console.error("error: ", error))
+    }, 
+      error=> console.error("error: ", error))
   }
+  loginUsuario(){}
+
   prueba(){
     console.log(this.nombre.nativeElement.value)
+    alertify.success("prueba exitosa")
+    
   }
 
   
