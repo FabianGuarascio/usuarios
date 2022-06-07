@@ -17,7 +17,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     LoginRoutingModule,
     MatButtonModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    
   ]
 })
 export class LoginModule { }

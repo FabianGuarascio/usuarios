@@ -3,12 +3,13 @@
     <div class="card">
         <mat-form-field >
             <mat-label>Nombre de usuario</mat-label>
-            <input matInput>
+            <input matInput #nombre>
         </mat-form-field>
         <mat-form-field >
             <mat-label>Password</mat-label>
-            <input matInput>
+            <input matInput #password>
         </mat-form-field>
-        <button mat-raised-button color="accent">iniciar sesion</button>
+        <button mat-raised-button color="accent" (click)="login()">iniciar sesion</button>
+        <button mat-raised-button color="accent" (click)="prueba()">iniciar sesion2</button>
     </div>
 </div>
