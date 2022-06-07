@@ -16,7 +16,8 @@ export class ListadoContactosComponent implements OnInit {
       email:"test@gmail",
       pais:"Timbuktu",
       ciudad:"Londres",
-      calle:"441 baker street"
+      calle:"441 baker street",
+      usuario_id:1
     },
     {
       nombre:"Jacinta",
@@ -25,7 +26,8 @@ export class ListadoContactosComponent implements OnInit {
       email:"test2@gmail",
       pais:"Argentina",
       ciudad:"Cordoba",
-      calle:"San Martin 200"
+      calle:"San Martin 200",
+      usuario_id:1
     }
   ]
   constructor() { }

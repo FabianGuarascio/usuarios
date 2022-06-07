@@ -6,4 +6,5 @@ export interface ContactoInterface {
     pais:string;
     ciudad:string;
     calle:string;
+    usuario_id:number;
 }
