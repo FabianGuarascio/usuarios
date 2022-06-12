@@ -1,4 +1,7 @@
-<div class="container">
-    <app-listado-contactos></app-listado-contactos>
-    <app-fromulario-contactos></app-fromulario-contactos>
+<div class="padre">
+        <button class="btn btn-primary" (click)="logout()">Cerrar Sesion</button>
+        <button class="btn btn-primary" (click)="openDialog()">{{status?"Agregar Contacto":"Descartar"}}</button>
+    <div class="container">
+        <app-table></app-table>
+    </div>
 </div>

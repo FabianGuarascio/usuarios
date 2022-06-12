@@ -1,0 +1,47 @@
+table {
+    width: 100%;
+  }
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  ::ng-deep.mat-form-field{
+    background-color: var(--color-5);
+    color:var(--text);
+    /* min-width: 589px; */
+
+  }
+  
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(155, 155, 155);
+    opacity: 1; /* Firefox */
+}
+::ng-deep.mat-select-value{
+  color: var(--text);
+}
+::ng-deep.mat-sort-header{
+  background-color: var(--color-4);
+  color:var(--text);
+}
+
+::ng-deep.mat-sort-header-arrow{
+  color:var(--text)
+}
+
+::ng-deep.mat-cell{
+  color:var(--text);
+  background-color: var(--color-5);
+  text-align: start;
+}
+
+::ng-deep.mat-paginator-container{
+  background-color: var(--color-5);
+  color:var(--text);
+  min-width: 589px;
+
+}
+
+
+  
+  
+    

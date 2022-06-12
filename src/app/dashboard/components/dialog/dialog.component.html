@@ -1,0 +1,48 @@
+
+<h1 mat-dialog-title>Añade un nuevo contacto</h1>
+<div  mat-dialog-content>
+    <form [formGroup]="myForm">
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input matInput placeholder="Nombre" formControlName="nombre">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Apellido</mat-label>
+        <input matInput placeholder="Apellido" formControlName="apellido">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Telefono</mat-label>
+        <input matInput placeholder="Telefono" formControlName="telefono">
+        <mat-hint style="color:white">Utilize solo numeros sin guiones ni espacios</mat-hint>
+        <mat-error *ngIf="!telefono?.hasError('maxLength')">El numero de telefono debe ser menor a 10 digitos</mat-error>
+        
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" formControlName="email">
+        <mat-error *ngIf="email?.invalid">Ingrese un email valido</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Pais</mat-label>
+        <input matInput placeholder="Pais" formControlName="pais">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Ciudad</mat-label>
+        <input matInput placeholder="Ciudad" formControlName="ciudad">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Calle</mat-label>
+        <input matInput placeholder="Calle" formControlName="calle">
+      </mat-form-field>
+    </form>
+</div>
+<div mst-dialog-action [align]="'center'">
+  <button class="btn btn-primary" (click)="guardarContacto()" [disabled]="myForm.invalid">Guardar</button>
+  <button class="btn btn-danger" style="margin-left: 1rem ;" mat-dialog-close>Cancelar</button>
+</div>

@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router, UrlSerializer } from '@angular/router';
 import { LoginService } from '../login.service';
 
 declare let alertify:any;
@@ -10,12 +10,11 @@ declare let alertify:any;
   styleUrls: ['./pages.component.css']
 })
 export class PagesComponent implements OnInit {
-  @ViewChild("nombre")
-  nombre!: ElementRef;
-  @ViewChild("password")
-  password!: ElementRef;
+  @ViewChild("nombre")  nombre!: ElementRef;
+  @ViewChild("password")  password!: ElementRef;
+  hide = true;
 
-  constructor(public loginService: LoginService, private router:Router) { }
+  constructor(public loginService: LoginService, private router:Router, private _route:ActivatedRoute ) { }
 
   ngOnInit(): void {
   }
@@ -25,23 +24,18 @@ export class PagesComponent implements OnInit {
       nombre:this.nombre.nativeElement.value,
       password:this.password.nativeElement.value
     }
-    this.loginService.login(datos).subscribe(data=>{
+    this.loginService.login(datos).subscribe( data=>{
       if(data!="FAIL"){
         localStorage['token'] = data;
-        this.loginService.loginUsuario(datos).subscribe(usuario=>localStorage['usuario'] = usuario)
+        this.loginService.loginUsuario(datos).subscribe(usuario=> localStorage['usuario'] = usuario)
         alertify.success("Inicio de sesion exitoso")
-        this.router.navigate(['dashboard']);
+        setTimeout(() => {
+          this.router.navigate(['dashboard']);
+        }, 100);
       }else{
         alertify.error("Usuario y/o contraseña incorrectos")
       }
     }, 
       error=> console.error("error: ", error))
-  }
-  loginUsuario(){}
-
-  prueba(){
-    console.log(this.nombre.nativeElement.value)
-    alertify.success("prueba exitosa")
-    
   }
 }

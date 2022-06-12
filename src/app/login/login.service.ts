@@ -7,9 +7,15 @@ import { Observable } from 'rxjs';
 })
 export class LoginService {
 
+  // urlLogin:string="http://localhost:8080/api/login"
+  // urlLoginUsuario:string="http://localhost:8080/api/login/usuario"
+
+  heroku:string="https://contactos-registro.herokuapp.com/"
+
+  urlLogin:string=`${this.heroku}api/login`;
+  urlLoginUsuario:string=`${this.heroku}api/login/usuario`
   
-  urlLogin:string="http://localhost:8080/api/login"
-  urlLoginUsuario:string="http://localhost:8080/api/login/usuario"
+
   constructor(private http:HttpClient) { }
 
  
