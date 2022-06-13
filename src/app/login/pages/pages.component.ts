@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute, Router, UrlSerializer } from '@angular/router';
+import { ActivatedRoute, Router} from '@angular/router';
 import { LoginService } from '../login.service';
 
 declare let alertify:any;
@@ -29,9 +29,7 @@ export class PagesComponent implements OnInit {
         localStorage['token'] = data;
         this.loginService.loginUsuario(datos).subscribe(usuario=> localStorage['usuario'] = usuario)
         alertify.success("Inicio de sesion exitoso")
-        setTimeout(() => {
           this.router.navigate(['dashboard']);
-        }, 100);
       }else{
         alertify.error("Usuario y/o contraseña incorrectos")
       }

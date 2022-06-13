@@ -24,12 +24,6 @@ export class HomeComponent implements OnInit {
   }
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogComponent, {
-      // width: '30%',
     });
-
- 
-  
-
-  
-}
+  }
 }

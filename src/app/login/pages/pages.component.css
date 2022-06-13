@@ -8,6 +8,7 @@
 .card{
     width: 40%;
     height: 40%;
+    min-height: 250px;
     min-width: 300px;
     background-color: var(--color-3);
     display: flex;

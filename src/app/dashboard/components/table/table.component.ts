@@ -30,7 +30,7 @@ export class TableComponent implements OnInit {
       this.suscription = this.contactos.refresh$.subscribe(()=>{
         this.obtenerContactos()
       })
-      }, 100);
+      }, 300);
     }else{
       this.obtenerContactos()
     this.suscription = this.contactos.refresh$.subscribe(()=>{

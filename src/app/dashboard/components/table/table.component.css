@@ -8,8 +8,6 @@ table {
   ::ng-deep.mat-form-field{
     background-color: var(--color-5);
     color:var(--text);
-    /* min-width: 589px; */
-
   }
   
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -37,9 +35,13 @@ table {
 ::ng-deep.mat-paginator-container{
   background-color: var(--color-5);
   color:var(--text);
-  min-width: 589px;
-
+  min-width: 716px;
+  
 }
+input{
+  caret-color: greenyellow;
+}
+
 
 
   

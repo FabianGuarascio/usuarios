@@ -1,4 +1,4 @@
-<mat-form-field appearance="standard" style="margin-top:2rem; min-width: 589px;">
+<mat-form-field appearance="standard" style="margin-top:2rem; min-width: 716px;">
     <mat-label style="color:white">Buscar</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="Ej. Agustina " #input>
   </mat-form-field>
@@ -57,7 +57,6 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   
-      <!-- Row shown when there is no matching data. -->
       <tr class="mat-row" *matNoDataRow>
         <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
       </tr>
